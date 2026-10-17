@@ -83,32 +83,7 @@
 <body>
     {{-- Header --}}
     <header class="sticky top-0 z-50 border-b border-slate-100 bg-white/90 backdrop-blur-xl">
-        <div class="container flex h-[76px] items-center justify-between">
-            <a href="#" class="brand flex items-center gap-2 text-xl font-extrabold tracking-tight text-slate-900">
-                <span class="grid h-9 w-9 place-items-center rounded-xl bg-blue-600 text-white">✦</span>
-                Quick<span class="text-blue-600">Fix</span>
-            </a>
-
-            <nav class="desktop-nav flex items-center gap-8 text-sm font-semibold">
-                <a class="nav-link" href="#home">Home</a>
-                <a class="nav-link" href="#services">Services</a>
-                <a class="nav-link" href="#how-it-works">How it works</a>
-                <a class="nav-link" href="#why-quickfix">Why QuickFix</a>
-            </nav>
-
-            <div class="flex items-center gap-3">
-                @auth
-                    <a href="{{ route('bookings.index') }}" class="hidden text-sm font-bold text-slate-700 sm:inline">My bookings</a>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button class="btn-primary !px-4 !py-2.5 text-sm" type="submit">Log out</button>
-                    </form>
-                @else
-                    <a href="#" class="hidden text-sm font-bold text-slate-700 sm:inline">Log in</a>
-                    <a href="#" class="btn-primary !px-4 !py-2.5 text-sm">Get started <span aria-hidden="true">→</span></a>
-                @endauth
-            </div>
-        </div>
+        @include('components.navbar')
     </header>
 
     <main>
@@ -128,7 +103,7 @@
                         From a dripping tap to a full home refresh, book trusted local professionals in just a few clicks.
                     </p>
 
-                    <form action="#" method="GET" class="mt-8 flex max-w-xl flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-3 shadow-lg shadow-blue-900/5 sm:flex-row">
+                    <form action="{{ route('services.index') }}" method="GET" class="mt-8 flex max-w-xl flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-3 shadow-lg shadow-blue-900/5 sm:flex-row">
                         <label class="flex min-w-0 flex-1 items-center gap-3 px-2">
                             <span class="text-xl" aria-hidden="true">⌕</span>
                             <span class="min-w-0 flex-1">
@@ -188,7 +163,7 @@
                         <h2 class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Services for every corner</h2>
                         <p class="mt-3 max-w-xl leading-7 text-slate-500">Find the right person for the little fixes and the bigger to-do list.</p>
                     </div>
-                <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800">View all services <span>→</span></a>
+                    <a href="{{ route('services.index') }}" class="inline-flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-800">View all services <span>→</span></a>
                 </div>
 
                 @php
@@ -222,7 +197,7 @@
                             <p class="mt-2 min-h-[48px] text-sm leading-6 text-slate-500">{{ $description }}</p>
                             <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
                                 <p class="text-xs text-slate-500">Starting from <strong class="text-base text-slate-900">₹{{ number_format((float) $price, 0) }}</strong></p>
-                                <a href="#" class="grid h-9 w-9 place-items-center rounded-xl bg-blue-50 font-bold text-blue-600 transition hover:bg-blue-600 hover:text-white" aria-label="Explore {{ $name }}">→</a>
+                                <a href="{{ route('services.index') }}" class="grid h-9 w-9 place-items-center rounded-xl bg-blue-50 font-bold text-blue-600 transition hover:bg-blue-600 hover:text-white" aria-label="Explore {{ $name }}">→</a>
                             </div>
                         </article>
                     @endforeach
@@ -278,7 +253,7 @@
                         <li class="flex gap-3"><span class="text-emerald-600">✓</span> Service details and starting prices in one place</li>
                         <li class="flex gap-3"><span class="text-emerald-600">✓</span> Booking history available in your account</li>
                     </ul>
-                    <a href="#" class="btn-primary mt-8">Find your service <span>→</span></a>
+                    <a href="{{ route('services.index') }}" class="btn-primary mt-8">Find your service <span>→</span></a>
                 </div>
             </div>
         </section>
@@ -292,7 +267,7 @@
                             <h2 class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Let's get it fixed.</h2>
                             <p class="mt-3 max-w-xl text-sm leading-6 text-blue-100">Find a service, make a booking, and get one step closer to a home that works for you.</p>
                         </div>
-                        <a href="#" class="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-5 py-3 font-extrabold text-blue-700 transition hover:bg-blue-50">Explore services <span>→</span></a>
+                        <a href="{{ route('services.index') }}" class="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-5 py-3 font-extrabold text-blue-700 transition hover:bg-blue-50">Explore services <span>→</span></a>
                     </div>
                 </div>
             </div>
@@ -302,7 +277,7 @@
     {{-- Footer --}}
     <footer class="border-t border-slate-100 bg-white">
         <div class="container flex flex-col justify-between gap-5 py-8 sm:flex-row sm:items-center">
-            <a href="#" class="brand flex items-center gap-2 font-extrabold text-slate-900">
+            <a href="{{ route('services.index') }}" class="brand flex items-center gap-2 font-extrabold text-slate-900">
                 <span class="grid h-8 w-8 place-items-center rounded-lg bg-blue-600 text-white">✦</span>
                 Quick<span class="text-blue-600">Fix</span>
             </a>
