@@ -1,0 +1,23 @@
+[33mcommit 0e1259d4f6b6ee1f37f5d2d489b21491b815b31b[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature-nav[m[33m)[m
+Author: Tarun Verma <151928619+Tarun-Va@users.noreply.github.com>
+Date:   Sat Oct 17 18:03:36 2026 +0530
+
+    Component created nav
+
+[33mcommit ea8025e9b450a20f978465b6a67753b6619e3924[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Tarun Verma <tarunverma.dev.0@gmail.com>
+Date:   Thu Oct 15 15:31:42 2026 +0530
+
+    Add GitHub Actions workflow for Laravel tests
+
+[33mcommit 79660f463cf710e29207f1077d06fbecb3028bcf[m
+Author: Tarun Verma <151928619+Tarun-Va@users.noreply.github.com>
+Date:   Thu Oct 15 15:29:07 2026 +0530
+
+    Home page created
+
+[33mcommit 1b1c797f45ae104b8f1891fda0ffe177f334185a[m
+Author: Tarun Verma <151928619+Tarun-Va@users.noreply.github.com>
+Date:   Wed Oct 14 09:09:10 2026 +0530
+
+    first commit
